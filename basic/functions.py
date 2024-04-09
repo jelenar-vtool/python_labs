@@ -1,29 +1,13 @@
 import random
 
-# Global variable to store the previous random number
-previous_random = None
+#TODO: Global variable to store the previous random number
+
 
 def generate_random_number():
-    """
-    Generates a random number between 0 and 100.
-    """
-    return random.randint(0, 100)
-
+    
+#TODO: Generates and returns a random number between 0 and 100.
+    
 def add_to_previous():
-    """
-    Adds the current random number to the previous one.
-    If it's the first random number, returns the current random number.
-    """
-    global previous_random
-    current_random = generate_random_number()
-    if previous_random is None:
-        previous_random = current_random
-    else:
-        previous_random += current_random
-    return previous_random
+#TODO:  Adds the current random number to the previous one
 
-# Example usage:
-for _ in range(5):
-    print("Current random number:", generate_random_number())
-    print("Random number added to previous:", add_to_previous())
-    print()
+# Example usage, do ti for 5 times, and print about results:
