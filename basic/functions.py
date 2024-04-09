@@ -10,4 +10,4 @@ def generate_random_number():
 def add_to_previous():
 #TODO:  Adds the current random number to the previous one
 
-# Example usage, do ti for 5 times, and print about results:
+# Example usage, do it for 5 times, and print about results:
