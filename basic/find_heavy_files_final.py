@@ -1,42 +1,17 @@
 import os #used for greping
 import sys #used for checking py version installed
+#TODO: Get Current Working Directory
 
-rootdir = os.getcwd() #returns the CurrentWorkingDirectory (absolute path)
-
-#recursive function that returns the list of all files in current dir and all its sub dirs
+#TODO: Write a function to retrieve all files within a directory and its subdirectories.
 def get_all_files(root):
-    all_files = [] 
-    list_of_files = os.listdir(root) #returns all it finds in current dir (files and folders)
 
-    for file in list_of_files:
-        fullPath = os.path.join(root, file) #joining abs and relative path to change dir
-        if os.path.isdir(fullPath): #if dir, then enter it and call the function again
-            all_files = all_files + get_all_files(fullPath)
-        else: #if file, append it in file list
-            all_files.append(fullPath)
-                
-    return all_files #return all files appended in list
 
-#returns the list of sizes of all files provided in list_of_files list
+#TODO: Create a function to get the sizes of all files.
 def get_all_sizes(list_of_files, unit):
-    if unit == 'k':
-        div_rate = 1 #kB = B / 1024
-    if unit == 'm':
-        div_rate = 2 #mB = B / 1024 / 1024
-    if unit == 'g':
-        div_rate = 3 #gB = B / 1024 / 1024 / 1024
-    sizes = []
-    for file in list_of_files:
-        sizeB = os.path.getsize(file)
-        for i in range (0, div_rate):
-            sizeB = float(sizeB) / 1024.0
-        sizes.append(sizeB) #getsize function returns file sizes in B
+ 
 
-    return sizes
-
-#returns dictionary sorted by its values, in either acc or dec order (for dec reverse = True)
+#TODO: Write a function to sort a dictionary by its values.
 def sort_dict_by_value(d, reverse = False): 
-    return dict(sorted(d.items(), key = lambda x: x[1], reverse = True))
 
 particular_file_extension_flag = False
 
