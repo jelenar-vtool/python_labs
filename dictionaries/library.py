@@ -1,60 +1,28 @@
 library = {}
-
+#TODO: function that if book is not in library adds it
 def add_book(title, author, genre, availability=True):
-    if title not in library:
-        library[title] = {
-            "author": author,
-            "genre": genre,
-            "availability": availability
-        }
-        print(f"Book '{title}' added to the library.")
-    else:
-        print(f"Book '{title}' already exists in the library.")
+
+#TODO: function that if enetred book is available sets it to False 
 
 def borrow_book(title):
-    if title in library:
-        if library[title]["availability"]:
-            library[title]["availability"] = False
-            print(f"Book '{title}' has been borrowed.")
-        else:
-            print(f"Book '{title}' is currently not available.")
-    else:
-        print(f"Book '{title}' does not exist in the library.")
+  
+#TODO: function that if enetred book is not available sets it to True 
 
 def return_book(title):
-    if title in library:
-        if not library[title]["availability"]:
-            library[title]["availability"] = True
-            print(f"Book '{title}' has been returned.")
-        else:
-            print(f"Book '{title}' is already available in the library.")
-    else:
-        print(f"Book '{title}' does not exist in the library.")
+    
+#TODO: function that checks if book exists in library
 
 def search_book_by_title(title):
-    if title in library:
-        return library[title]
-    else:
-        print(f"Book '{title}' not found in the library.")
-        return None
-
+    
+#TODO: function that lists all books in library along with author, genre and availability
 def list_books():
-    print("List of Books in the Library:")
-    for title, book_info in library.items():
-        print(f"Title: {title}, Author: {book_info['author']}, Genre: {book_info['genre']}, "
-              f"Availability: {'Available' if book_info['availability'] else 'Not Available'}")
 
+#TODO: function that lists available books in library along with author, genre and availability
 def list_available_books():
-    print("List of Available Books:")
-    for title, book_info in library.items():
-        if book_info["availability"]:
-            print(f"Title: {title}, Author: {book_info['author']}, Genre: {book_info['genre']}")
 
+#TODO: function that lists only authors
 def list_authors():
-    authors = set(book_info["author"] for book_info in library.values())
-    print("List of Authors:")
-    for author in authors:
-        print(author)
+   
 
 
 # Add some books to the library
